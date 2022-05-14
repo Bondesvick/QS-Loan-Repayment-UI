@@ -1,0 +1,790 @@
+<div class="column col-desc">
+  <div id="back-button" class="cursor" style="padding-left: 20px;padding-top: 5px !important;"><img width="20"
+      style="margin-right: 15px !important;" class="back-img" height="20" [routerLink]="[ '/home']"
+      src="../assets/images/back (2).svg" alt="">
+    <a style="color: black;" [routerLink]="[ '']" for="">Go back</a> </div>
+  <div style="width: 60%;margin: 0 auto;text-align: left;">
+
+    <h1 style="font-size: 24px; padding-top:0px;padding-bottom: 5px;padding-left: 12px;"> Loan Repayment
+    </h1>
+    <div class="ul-class-cont">
+      <div>
+        <div class="active-bg-icon" style="float: left;">
+          <img
+            [src]="isAccountStepperActive ? '../../../assets/images/Group774.png': '../../../assets/images/Group773.png'"
+            height="20" width="20">
+          <p class="li-icon-seperator"></p>
+        </div>
+        <div class="li-content">
+          <p class="li-subtitle-disabled">Account Validation</p>
+          <p class="li-subcontent-disabled"> Fill in your correct Account number and Phone number to validate your
+            account
+
+          </p>
+        </div>
+
+      </div>
+      <!-- <div>
+        <div class="active-bg-icon" style="float: left;">
+          <img *ngIf="!isDetailFormActive && !isDetailFormDone" src="../../../assets/images/Group775.png" height="20"
+            width="20">
+          <img *ngIf="isDetailFormActive && !isDetailFormDone" src="../../../assets/images/Group774.png" height="20"
+            width="20">
+          <img *ngIf="!isDetailFormActive && isDetailFormDone" src="../../../assets/images/Group773.png" height="20"
+            width="20">
+          <p class="li-icon-seperator"></p>
+        </div>
+        <div class="li-content">
+          <p class="li-subtitle-disabled" [ngClass]="{'disabled-text': !isDetailFormActive && !isDetailFormDone}">
+            Provide details
+            on the Loan Repayment
+          </p>
+          <p class="li-subcontent-disabled" [ngClass]="{'disabled-text': !isDetailFormActive && !isDetailFormDone}"> You
+            will be required to provide details on the Loan Repayment, such as the type of transaction that failed,
+            amount,
+            transaction date, receipt .
+
+        </div> -->
+
+        <div>
+          <div class="active-bg-icon" style="float: left;">
+            <img *ngIf="!isDetailFormActive && !isDetailFormDone" src="../../../assets/images/Group775.png" height="20"
+              width="20">
+            <img *ngIf="isDetailFormActive && !isDetailFormDone" src="../../../assets/images/Group774.png" height="20"
+              width="20">
+            <img *ngIf="!isDetailFormActive && isDetailFormDone" src="../../../assets/images/Group773.png" height="20"
+              width="20">
+            <p class="li-icon-seperator"></p>
+          </div>
+          <div class="li-content">
+            <p class="li-subtitle-disabled" [ngClass]="{'disabled-text': !isDetailFormActive && !isDetailFormDone}">
+              Verify BVN and date of birth
+            </p>
+            <p class="li-subcontent-disabled" [ngClass]="{'disabled-text': !isDetailFormActive && !isDetailFormDone}"> You
+              will be required to provide your BVN Number and date of birth.
+  
+          </div>
+
+        <div>
+          <div class="active-bg-icon" style="float: left;">
+            <img *ngIf="!isVerifyFormActive && !isVerifyFormDone" src="../../../assets/images/Group775.png" height="20"
+              width="20">
+            <img *ngIf="isVerifyFormActive && !isVerifyFormDone" src="../../../assets/images/Group774.png" height="20"
+              width="20">
+            <img *ngIf="!isVerifyFormActive && isVerifyFormDone" src="../../../assets/images/Group773.png" height="20"
+              width="20">
+            <p class="li-icon-seperator"></p>
+
+          </div>
+          <div class="li-content">
+            <p class="li-subtitle-disabled" [ngClass]="{'disabled-text': !isVerifyFormActive && !isVerifyFormDone}">
+              Verify
+              OTP</p>
+            <p class="li-subcontent-disabled" [ngClass]="{'disabled-text': !isVerifyFormActive && !isVerifyFormDone}">
+              A one time password would be sent to your registered device. Please provide the verification pin to
+              complete the request
+          </div>
+        </div>
+        <div>
+          <div class="active-bg-icon" style="float: left;">
+            <img *ngIf="!isRepayLoanFormActive && !isRepayLoanFormDone" src="../../../assets/images/Group775.png"
+              height="20" width="20">
+            <img *ngIf="isRepayLoanFormActive && !isRepayLoanFormDone" src="../../../assets/images/Group774.png"
+              height="20" width="20">
+            <img *ngIf="!isRepayLoanFormActive && isRepayLoanFormDone" src="../../../assets/images/Group773.png"
+              height="20" width="20">
+
+          </div>
+          <div class="li-content">
+            <p class="li-subtitle-disabled"
+              [ngClass]="{'disabled-text': !isRepayLoanFormActive && !isRepayLoanFormDone}">
+              Repay Loan</p>
+            <p class="li-subcontent-disabled"
+              [ngClass]="{'disabled-text': !isRepayLoanFormActive && !isRepayLoanFormDone}">
+              Choose loan account to repay and select a debit account. If it is a partial repayment, enter how much you
+              wish to repay back
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
+<div class="column col-stepper-container">
+  <a id="back-button-mobile" class="cursor" [routerLink]="[ '/home']"
+    style="padding-left: 20px;padding-top: 5px !important;"><img width="20" style="margin-right: 15px !important;"
+      class="back-img" height="20" src="../assets/images/back (2).svg" alt="">
+    <label style="color: black;" for="">Go back</label> </a>
+  <div class="stepper-container">
+    <h2 id="mobileheader" class="header-cls" style="padding-top:20px;padding-left: 26px;" #mobileheader> Loan Repayment
+    </h2>
+
+    <h3 *ngIf="isAccountStepperActive" class="stepper-header">
+      Account Validation</h3>
+
+    <h3 *ngIf="isDetailFormActive" class="stepper-header">
+      Details of Loan Repayment</h3>
+
+
+    <h3 *ngIf="isVerifyFormActive" class="stepper-header">
+      Verify OTP</h3>
+    <mat-horizontal-stepper linear labelPosition="bottom" #stepper>
+
+      <mat-step [stepControl]="accountFormGroup">
+        <form style="padding-top: 8px !important;" [formGroup]="accountFormGroup">
+          <ng-template matStepLabel matStepperIcon=""> Fill in your details </ng-template>
+
+          <section *ngIf="showSpinner">
+            <mat-progress-bar class="example-margin" [color]="color" [mode]="mode" [value]="value"
+              [bufferValue]="bufferValue">
+            </mat-progress-bar>
+          </section>
+
+          <h4>Please provide the correct details</h4>
+          <div class="w-100">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Account Number</mat-label>
+              <input matInput autocomplete="off" maxlength="10" minlength="10" placeholder="Enter Account Number"
+                formControlName="accountNoCtrl" type="text" required>
+              <mat-hint align="end">Max 10 characters</mat-hint>
+              <mat-error *ngIf="accountFormGroup.get('accountNoCtrl').hasError('required')">
+                Account Number is required </mat-error>
+                <mat-error *ngIf="accountFormGroup.get('accountNoCtrl').hasError('pattern')">
+                  Only numbers are allowed </mat-error>
+
+            </mat-form-field>
+          </div>
+
+          <div class="w-100">
+
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Phone Number</mat-label>
+              <input matInput autocomplete="off" maxlength="11" minlength="11" placeholder="Enter Phone Number"
+                formControlName="phoneNoCtrl" required>
+              <mat-hint align="end">Max 11 characters</mat-hint>
+              <mat-error *ngIf="accountFormGroup.get('phoneNoCtrl').hasError('required')">
+                Phone Number is required </mat-error>
+                <mat-error *ngIf="accountFormGroup.get('phoneNoCtrl').hasError('pattern')">
+                  Only numbers are allowed </mat-error>
+                  <mat-error *ngIf="accountFormGroup.get('phoneNoCtrl').hasError('maxlength')">
+                    Phone Number must be 11 characters </mat-error>
+            </mat-form-field>
+          </div>
+          <button mat-flat-button class="big-buttonStyles"
+            [ngClass]="{'disabled': isAwaitingResponse || acctNo === ' '|| phoneNo === ' ' || accountFormGroup.invalid}"
+            [disabled]="isAwaitingResponse || acctNo === ' '|| phoneNo === ' ' || accountFormGroup.invalid"
+            (click)="validateAccountDetails(stepper)">Next</button>
+
+
+          <div class="float-right">
+          </div>
+        </form>
+      </mat-step>
+
+      
+      <!-- <mat-step [stepControl]="authenticationFormGroup">
+        <form [formGroup]="authenticationFormGroup">
+
+          <ng-template matStepLabel>Select Authentication</ng-template>
+
+          <div>
+            <label id="example-radio-group-label" class="example-radio-group-label">Do you have a debit card?</label>
+
+            <mat-radio-group aria-labelledby="example-radio-group-label" formControlName="debitCardOption"
+              class="example-radio-group">
+              <mat-radio-button class="example-radio-button" *ngFor="let cardOption of cardOptions"
+                (click)="onSelectDebitCard(cardOption)" [value]="cardOption">
+                {{cardOption}}
+              </mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <section *ngIf="showSpinner">
+            <mat-progress-bar class="example-margin" [color]="color" [mode]="mode" [value]="value"
+              [bufferValue]="bufferValue">
+            </mat-progress-bar>
+          </section>
+
+          <div>
+            <h6 *ngIf="debitCardValue === 'No'"
+              style="background-color: rgba(17, 57, 152, 0.16); font-weight: lighter; padding:20px !important; font-size: medium;">
+              To complete your authentication,
+              <b><br> You will required to provide a signature on the account on a sheet of paper , take a picture and
+                upload<br></b>
+              Please click proceed to continue</h6>
+          </div>
+
+          <div>
+            <button style=" margin-right:20px !important;background-color: rgba(3, 150, 253, 0.16) ; text-transform: uppercase;
+                            color: #0396FD;width: 40% !important;  height: 50px;" mat-button
+              matStepperPrevious>Back</button>
+            <button
+              style="color: #FFFFFF ;
+                            background-color: #113998 ; width: 40% !important; height: 50 px; text-transform: uppercase;"
+              [ngClass]="{'disabled': authenticationFormGroup.invalid || debitCardValue === 'Yes'}" mat-button
+              [disabled]="authenticationFormGroup.invalid || debitCardValue === 'Yes'"
+              (click)="proceedFromAuthentication(stepper)">Proceed</button>
+          </div>
+
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="uploadSignatureForm"
+        *ngIf="debitCardValue === 'No' || acctSegment !== accountSegmentEnum.PersonalAccount">
+        <ng-template matStepLabel>Upload Signature</ng-template>
+
+        <form [formGroup]="uploadSignatureForm">
+
+          <h4>Please upload a signature</h4>
+
+          <div>
+            <h6
+              style="background-color: rgba(17, 57, 152, 0.16); font-weight: lighter; padding:20px !important; font-size: medium;">
+              <b> You are required to provide a signature on the account on a sheet of paper , take a picture and
+                upload<br></b></h6>
+          </div>
+
+          <div class="align-left upload-cont" style="padding: 13px !important;">
+            <label for="file-upload" class="custom-file-upload" (click)="signatureInput.click()">Choose File </label>
+            <input hidden accept="image/*,application/pdf" (change)="onFileSelected($event, 'Signature')"
+              #signatureInput type="file" formContolName="signatureCtrl" id="signatureInput">
+          </div>
+          <div *ngIf="signatureFile" class="selected-file">
+            <label class="file-text" for="">
+              {{signatureFile}}
+              <img style="margin-left: 10px;
+                  " src="../../../assets/images/Group773.png" height="15" width="15">
+
+            </label>
+
+            <mat-icon class="cancel-icn" (click)="removeSelectedFile()">cancel</mat-icon>
+          </div>
+          <div class="fileError-cls">
+            {{signatureFileError}}
+          </div>
+          <section *ngIf="detailFormSpinner">
+            <mat-progress-bar class="example-margin" [color]="color" [mode]="mode" [value]="value"
+              [bufferValue]="bufferValue">
+            </mat-progress-bar>
+          </section>
+
+          <button mat-flat-button class="big-buttonStyles btn-cont" [ngClass]="{'primary': class=='primary'}"
+            [disabled]="uploadSignatureForm.invalid" (click)="initiateOTP(stepper)">Proceed</button>
+
+
+        </form>
+      </mat-step> -->
+
+      <!-- BVN -->
+      <mat-step class="align-left" [stepControl]="confirmBVNDateOfBirthForm"
+        *ngIf="debitCardValue === 'No' || acctSegment !== accountSegmentEnum.PersonalAccount">
+        <ng-template matStepLabel>Verify BVN & Date of Birth</ng-template>
+
+        <form [formGroup]="confirmBVNDateOfBirthForm">
+          <section *ngIf="showSpinner">
+            <mat-progress-bar class="example-margin" [color]="color" [mode]="mode" [value]="value"
+              [bufferValue]="bufferValue">
+            </mat-progress-bar>
+          </section>
+         
+            <h4>Please provide your BVN and Date of birth</h4>
+
+            <div class="w-100">
+              <mat-form-field appearance="fill" class="w-100">
+                <mat-label>BVN Number</mat-label>
+                <input matInput autocomplete="off" maxlength="11" minlength="11" placeholder="Enter BVN Number"
+                  formControlName="bvnNoCtrl" type="text" required>
+                <mat-hint align="end">Max 11 characters</mat-hint>
+                <mat-error *ngIf="confirmBVNDateOfBirthForm.get('bvnNoCtrl').hasError('required')">
+                  BVN Number is required </mat-error>
+  
+              </mat-form-field>
+            </div>
+  
+            <div class="w-100">
+  
+              <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Date of Birth</mat-label>
+                <!-- <input matInput autocomplete="off" maxlength="11" minlength="11" placeholder="Enter your date of birth"
+                  formControlName="dobCtrl" required> -->
+                  <input matInput  formControlName="dobCtrl" type="date" required>
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <!-- <mat-datepicker #picker></mat-datepicker> -->
+                <mat-error *ngIf="confirmBVNDateOfBirthForm.get('dobCtrl').hasError('required')">
+                  Date of birth is required </mat-error>
+              </mat-form-field>
+            </div>
+            <button mat-flat-button class="big-buttonStyles"
+              [ngClass]="{'disabled': isAwaitingResponse || bvn === ' '|| dob === ' ' || confirmBVNDateOfBirthForm.invalid}"
+              [disabled]="isAwaitingResponse || bvn === ' '|| dob === ' ' || confirmBVNDateOfBirthForm.invalid"
+              (click)="confirmBVNDateOfBirth(stepper)">Next</button>
+          
+
+        </form>
+      </mat-step>
+
+      <mat-step class="align-left" [stepControl]="otpForm"
+        *ngIf="debitCardValue === 'No' || acctSegment !== accountSegmentEnum.PersonalAccount">
+        <ng-template matStepLabel>Verify OTP</ng-template>
+
+        <form [formGroup]="otpForm">
+          <section *ngIf="showSpinner">
+            <mat-progress-bar class="example-margin" [color]="color" [mode]="mode" [value]="value"
+              [bufferValue]="bufferValue">
+            </mat-progress-bar>
+          </section>
+          <div class="">
+            <h4>Please provide the OTP sent to your registered phone number</h4>
+
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Enter OTP</mat-label>
+              <input matInput autocomplete="off" type="password" placeholder="Enter the verification otp"
+                formControlName="otpControl" minlength="5" maxlength="5" required>
+              <mat-hint align="end" class="cursor" style="color: #1428C4;" (click)="resendOTP()">Resend OTP</mat-hint>
+
+            </mat-form-field>
+          </div>
+          <button mat-flat-button class="big-buttonStyles" [ngClass]="{'primary': class=='primary'}"
+            [disabled]="isAwaitingResponse ||otpForm.invalid || disableOTPForm" (click)="validateOTP(stepper)">Proceed</button>
+
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="repaymentPlanForm">
+        <form style="padding-top: 8px;" [formGroup]="repaymentPlanForm">
+          <ng-template matStepLabel matStepperIcon=""> Select a repayment plan</ng-template>
+          <h4>Please choose a repayment plan</h4>
+
+          <section *ngIf="showSpinner">
+            <mat-progress-bar class="example-margin" [color]="color" [mode]="mode" [value]="value"
+              [bufferValue]="bufferValue">
+            </mat-progress-bar>
+          </section>
+
+          <div class="w-100">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>ACCOUNT SEGMENT</mat-label>
+              <input matInput autocomplete="off" disabled [value]="accountSegment" disabled>
+            </mat-form-field>
+          </div>
+          <mat-form-field class="w-100">
+            <mat-label>Please choose how you wish to repay the loan </mat-label>
+            <mat-select style="margin:8px" formControlName="repaymentPlanCtrl">
+              <mat-option *ngFor="let opt of repaymentPlans" [value]="opt">
+                {{opt}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <div>
+            <h6
+              style="background-color: rgba(17, 57, 152, 0.16); font-weight: lighter; padding:20px !important; font-size: medium;">
+              <b> Transactions logged after 4pm will be treated the next day, and the value date will be the next day.
+                <br>
+                <br>
+
+                Transactions logged on weekends / public holiday will be treated the next working day and will carry the
+                working day’s value date.
+                <br>
+                <br>
+                <mat-checkbox [(ngModel)]="giveDebitConsent" [ngModelOptions]="{standalone: true}"></mat-checkbox>
+                <!-- <input type="checkbox" [(ngModel)]="giveDebitConsent"  [ngModelOptions]="{standalone: true}"> -->
+                By clicking proceed, I hereby give consent to debit my account for the repayment / liquidation of my
+                loan facility.
+
+              </b></h6>
+          </div>
+
+          <button mat-flat-button class="big-buttonStyles" [ngClass]="{'disabled': repaymentPlanForm.invalid || !giveDebitConsent}"
+            [disabled]="repaymentPlanForm.invalid || !giveDebitConsent" (click)="proceedToAuthentication(stepper)">Next</button>
+        </form>
+      </mat-step>
+
+      <mat-step class="align-left" [stepControl]="repaymentDetailsForm">
+        <ng-template matStepLabel>Complete Loan Repayment</ng-template>
+        <form [formGroup]="repaymentDetailsForm">
+          <table style="margin: 8px;">
+            <tr>
+              <th style="width: 25px;">
+              </th>
+              <th style="width: 30%;">
+                Loan Account
+              </th>
+              <th>
+                <!-- Current Balance  -->
+              </th>
+              <th style="width: 30%;">
+                Repayment Account
+              </th>
+              <th>
+                <!-- Current Balance  -->
+              </th>
+
+            </tr>
+            <tbody>
+              <tr>
+
+                <td style="width: 25px;">
+                  <!-- <mat-checkbox
+                    [disabled]="repaymentDetailsForm.invalid || (repaymentPlan === 'Partial Payment' && !repaymentAmt)"
+                    color="primary">
+                  </mat-checkbox> -->
+                </td>
+                <td style="width: 30%;">
+                  <mat-form-field class="w-50">
+                    <mat-label>Select Loan Account</mat-label>
+                    <mat-select formControlName="loanAcctControl">
+                      <mat-option placeholder="From Account Number"
+                        style="line-height: 1em !important;font-size: 12px !important;font-weight: bold;"
+                        (click)="onSelectLoanAcct(loan)" *ngFor="let loan of loanAccountsDetails" [value]="loan">
+                        <div style="display: block;">{{loan.AccountName}}-{{maskNumber(loan.AccountNumber)}}</div>
+                        <div style="display: block"> Available Bal:{{loan.LoanAmountValue | number:'1.0':'en-US'}}</div>
+
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+                </td>
+                <td>
+                  <!-- {{amountLoaned | number:'1.0':'en-US'}} -->
+                </td>
+                <td style="width: 30%;">
+                  <mat-form-field class="w-50">
+                    <mat-label>Select Repayment Account</mat-label>
+                    <mat-select formControlName="repaymentAcctControl">
+                      <mat-option (click)="onSelectRepaymentAcct(repayment)" placeholder="From Account Number"
+                        style="line-height: 1em !important;font-size: 12px !important;font-weight: bold;"
+                        *ngFor="let repayment of repaymentAccountDetails" [value]="repayment">
+                        <div style="display: block;">{{repayment.AccountName}}-{{maskNumber(repayment.AccountNumber)}}
+                        </div>
+                        <div style="display: block"> Available Bal:{{repayment.AvailableBalance | number:'1.0':'en-US'}}
+                        </div>
+                      </mat-option>
+                    </mat-select>
+
+                  </mat-form-field>
+                </td>
+                <td>
+                  <!-- {{amountToBeRepaid | number:'1.0':'en-US'}} -->
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="w-100" *ngIf="repaymentPlan === 'Partial Repayment'">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Amount</mat-label>
+              <input matInput type="text" required="" placeholder="Amount" (keyup)="amountInputKeyup()" autocomplete="off" (blur)="amountInputBlur()" (focus)="textInputFocus('amount')" [formControl]="amount" maxlength="22">
+            </mat-form-field>
+
+          </div>
+          <div>
+            <button
+              style="color: #FFFFFF ;
+                            background-color: #113998 ; width: 100% !important; height: 50 px; text-transform: uppercase;"
+              [ngClass]="{'disabled': repaymentDetailsForm.invalid || (repaymentPlan === 'Partial Repayment' && !amount)}"
+              mat-button
+              [disabled]="repaymentDetailsForm.invalid || (repaymentPlan === 'Partial Repayment' && !amount)"
+              (click)="InitiateRequest(stepper)">Repay</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step>
+        <form>
+          <ng-template matStepLabel state="check">Done</ng-template>
+
+          <h5
+            style="background-color: rgba(100, 231, 152, 0.16);text-align: center; font-weight: lighter; padding:20px !important; font-size: medium;">
+            <div style="text-align: center !important;">
+              <img src="../../../assets/images/Group773.png" height="64" width="64">
+
+            </div>
+            Your Loan repayment request has been successfully submitted <br>
+            <br>Your ticket ID is: <b>{{ticketID}}</b>. <br> <br>
+            Please keep this ID safe for future reference. For further enquiries, contact the Customer Contact
+            Centre on 0700 909 909 909
+          </h5>
+        </form>
+      </mat-step>
+
+    </mat-horizontal-stepper>
+  </div>
+</div>
+
+<ng-template #termsAndConditionModalTemplate>
+  <div class="page-wrapper">
+    <div>
+
+      <a class="fa fa-times close-reveal-modal1"></a>
+      <div class="row" style="clear: both;">
+        <div class="col-md-12 col-xs-12 text-center" style="margin: 0 auto;">
+          <div class="large-12 medium-12 small-12 medium-centered large-centered columns tc-wrap"
+            style="width: 100%;margin-left: auto;margin-right: auto;">
+            <div class="sb-logo" style="text-align: center;"><img height="25"
+                src="../../../assets/images/standard_bank_logo 1.png" width="20">
+            </div>
+            <div class="tc-header">Terms &amp; Conditions</div>
+            <div>
+              These are the Terms of Stanbic IBTC Mobile Banking APP, together with the terms and conditions that apply
+              to any account or service you may access using this App (the Product
+
+              Terms); and our Online Banking Terms and Conditions; and any other terms and conditions that we may advise
+              you shall govern and regulate your use of this Mobile Banking APP. By
+
+              downloading this App and enrolling for the Mobile Banking Services thereon (the Services), you are
+              agreeing to be bound by all the terms and conditions contained herein. <br><br>In the event of a conflict
+              between the App Terms and the Product Terms or Online Banking Terms and Conditions, the App Terms will
+              apply. The latest version of these
+
+              Terms applies each time you use this App to access our Services<br><br><b>Mobile Banking App</b><br>Before
+              you can use this App and our online services (including
+
+              products), you must register with us, and we must accept your registration. We may accept or reject your
+              registration at our sole discretion (in our own judgement) without
+
+              giving reasons.<br><br><b>Types of information on our App</b><br>
+              All information provided via this App is only intended to give you general information about us, our
+              products, services and goals. You should not regard anything on our App and
+
+              website as an offer, only as an invitation to do business with us. We provide all information "as is" and
+              you may not rely on it or treat it as professional advice. You should
+
+              always discuss any advice with a professional advisor before doing anything based on any information on
+              this App. <br><br><b>Changes to these Terms</b><br>
+              We may change these Terms from time to time. The latest version of these Terms apply whenever you use the
+              App. A certificate (letter) signed by the administrator of this website
+
+              is prima facie (initial) proof of the date and content of the latest and any previous version of these
+              Terms. <br><br><b>
+                Information on our Mobile Banking App and
+
+                Website
+              </b><br>We may use other organisations to provide information on this App and/or our website. We have no
+              control over this information and do not warrant or guarantee
+
+              that it is correct or suitable for anything. Any of this information is provided "as is" and we are not
+              directly or indirectly responsible for any loss that may follow from you
+
+              relying on it. <br><br><b>Links to other websites</b><br>The App may link to other websites with
+              information or content from other parties. Although we try to only link to
+
+              trustworthy parties or systems we are not responsible for any of this other information. If we provide a
+              link to any other information, website, person or business, it does not
+
+              mean that we have checked or approve of them. We do not give any warranty about any other website,
+              software or hardware, including their security or performance. You waive (give
+
+              up) any claim you may have against us for any loss or damage you may suffer because you connect to any
+              other website. <br><br><b>Non Permissible Activities</b><br>You are
+
+              not allowed to copy or reproduce all or any part of this App or alter, modify or adapt all or any part of
+              the App. You shall not remove or tamper with any copyright notice
+
+              contained within or attached to the App. You recognize that all ownership rights in the App is vested in
+              and remains with us.<br><br>The logos and trade marks on our App are
+
+              our registered and unregistered trademarks or those of other parties. Nothing on our App and our website
+              is a licence (permission) to use any trade mark for any other purpose
+
+              without first getting written permission from us or any other party that has rights to the intellectual
+              property<br><br><b>Your Security Obligations</b><br>
+              You must take all reasonable precautions to keep safe and prevent fraudulent use of your mobile device and
+              security information. <br><br>These precautions include: <br>
+
+              never writing down or otherwise recording your security details in a way that can be understood by someone
+              else; not choosing security details that may be easy to guess; taking
+
+              care to ensure that no one hears or sees your security details when you use it; not disclosing your
+              security details to anyone, including us; changing your security details
+
+              immediately and telling us as soon as possible if you know, or even suspect, that someone else knows your
+              security details; keeping your security details and mobile device safe;
+
+              complying with all reasonable instructions we issue regarding keeping your security details safe; logging
+              out of the Mobile Banking App once you have finished using the Mobile
+
+              Banking App services and undertake reasonable and adequate safeguards to scan for computer viruses or
+              other destructive properties.<br><br>We will not be liable for any
+
+              instruction given by you or anyone acting with your authority from the moment you log on to the Mobile
+              Banking App until you log off the Mobile Banking App. You are responsible
+
+              for making sure information shown or stored on mobile device is kept secure. You must advise us of any
+              change to your mobile phone number without delay.<br><br><b>
+                Use of
+
+                suitable Hardware and Software
+              </b><br>
+              You must use and update hardware and software (phones, tablets, any electronic device or and programs)
+              suitable for this App, our website and the online services. If you do not,
+
+              the App may not work properly and this could increase your security risks. If we offer any software to you
+              on or through our App and or website, the licence agreement is between
+
+              you and the software licensor (owner).<br>
+              <b>
+                <i>
+                  You indemnify us against any breach of a software licence. We do not expressly or implicitly warrant
+                  that any software is of good quality or suitable for its purpose. We
+
+                  also do not warrant that any file, download or application available on the communication system is
+                  safe to use on any phones, tablets. We cannot guarantee that it contains no
+
+                  software or data that can negatively affect an electronic device or computer system, such as viruses,
+                  trojans and other malicious software.
+                </i><br><br>
+
+                Risks of sending information over the Internet. <i>
+                  Information sent over the Internet, including email, can be intercepted, seen or changed. We take
+                  steps to limit these risks.
+
+                  Because we cannot stop all illegal activities, we are not responsible for any loss or damage you may
+                  suffer as a result.
+                </i>Closing, suspending or limiting the App and/or our
+
+                website.
+              </b> We may change, suspend the use of this App and other online services temporarily or permanently
+              without giving notice. We may also limit certain services, features
+
+              or functions, and we may restrict access to all or parts of any service on the App.<br><b><br>Disclaimer
+                and limits of our responsibility</b><br><i>
+                Your use of this App is
+
+                dependent on factors beyond our control, such as the network coverage or availability of your Internet
+                Service Provider’s availability. We are not liable for any loss or
+
+                damages you may suffer if a factor beyond our control arises, and you cannot access this App and our
+                online services.
+              </i><br><b>
+                <i>
+                  You use this App and the online services
+
+                  entirely at your own risk. You are fully responsible for any loss or damage that may result from you
+                  using or not being able to use this App or any of its content, information
+
+                  or any online service. We (including our owners, agents, consultants, employees and any affiliated
+                  person) are not responsible for any loss or damages related to your use of
+
+                  this App and our online Services. This includes, without limitation, any direct, indirect, special,
+                  incidental, consequential or punitive damages in terms of any contract, tort
+
+                  (breach of a duty of care) or law, and even if we were expressly told that any loss or damage was
+                  possible. We are not responsible for any loss that results from:<br>
+                  <ul>
+                    <li>
+                      any technical or other problem (including interruption, malfunction, downtime or other failure)
+                      that affects our App, system or any online service or any database for
+
+                      any reason;
+                    </li>
+                    <li>
+                      any problem affecting any other goods or services provided by any other party, for example any
+                      telecommunication or Internet service provider, electricity
+
+                      supplier, or local or other authority;
+                    </li>
+                    <li>
+                      any loss of or damage to any personal information or other data caused directly or indirectly by
+                      technical problems, power
+
+                      failures, unlawful acts (such as data theft), any harmful computer program or virus, or because of
+                      your own negligence ;
+                    </li>
+                    <li>
+                      any order, investment decision or purchase or
+
+                      disposal of goods or services (including any financial instrument or currency) from any other
+                      party based on any information on our website; or
+                    </li>
+                    <li>
+                      any event over which we
+
+                      have no direct control.
+                    </li>
+                  </ul>
+                </i>
+              </b><br><b>Legal Capacity </b><br>
+              You warrant to us that you are legally capable of agreeing to these Terms. If you are younger than 18, or
+              if you are not sure if you can legally enter into agreements without
+
+              your legal guardian agreeing to it with you, you must find out before you use the
+              APP.<br><br><b>Unauthorised transactions</b><br>
+              You will be responsible for all losses arising from unauthorised transactions on your account where you
+              intentionally or negligently fail to use the Mobile Banking App in
+
+              accordance with the Terms including but not limited to keeping your security details safe and secure, or
+              you intentionally or negligently fail to notify us if you reasonably
+
+              believe that someone else knows your security details or has used or tried to use your security details.
+              <br><br><b>
+                We may deny you access to this App immediately in the
+
+                following situations;
+              </b><br>
+              If you fail to use the Mobile Banking App for 12 months or for such period as we may in our sole and
+              absolute discretion determine; you will have to re-register in order to use
+
+              the Mobile Banking App gain; or If you have consistently breached any of the Terms of this App or the
+              Product Terms including where; you are, or we reasonably suspect you may
+
+              be, using or obtaining, or allowing someone else to use an account or receive services or money illegally;
+              or your account is, or we reasonably suspect your account is, being
+
+              used for an illegal or fraudulent purpose; or we have reasonable grounds to suspect fraudulent use of your
+              security details; or we have reasonable grounds for believing you have
+
+              committed or are about to commit a crime in connection with your account; or you have not satisfied any
+              anti-money laundering requirements or there has been or we suspect there
+
+              has been fraud involving any of your accounts with us; or If there has been or we suspect there has been
+              suspicious activity on your account; or If you stop holding any
+
+              account, product or service in respect of which the Mobile Banking App may be
+              used.<br><br><b>General</b><br>
+              The headings in these Terms are only for information. Do not consider them when you interpret the Terms.
+              Any favour we may allow you will not affect any of our rights against
+
+              you, whether the favour is expressed (said) or implied (not said). We do not waive (give up) any of our
+              rights.
+              If any clause in these Terms is invalid or illegal or cannot be enforced, the remaining clauses will
+              continue to be valid.<br><br><b>The law that applies to these Terms</b><br>The laws of Nigeria shall
+              govern these Terms. The Terms of this App are in English language and any Communications we send to you
+              will be in English. Except stated otherwise,
+
+              all copyright in the screens, pages and any material included in the App is owned by or licensed to us or
+              members of Stanbic IBTC Group.
+
+
+
+
+            </div>
+          </div>
+          <div style="padding-bottom: 20px;">
+            <section *ngIf="showSpinner">
+              <mat-progress-bar class="example-margin" [color]="color" [mode]="mode" [value]="value"
+                [bufferValue]="bufferValue">
+              </mat-progress-bar>
+            </section>
+          </div>
+          <div class="terms-condition">
+            <mat-checkbox [(ngModel)]="isIAgreeChecked"> I Agree</mat-checkbox>
+            <div style="padding-top: 20px;">
+              <button
+                style="float: right; color: #FFFFFF ;width: auto !important; height: 50 px; text-transform: uppercase;"
+                mat-flat-button class="big-buttonStyles" [ngClass]="{'primary': class=='primary'}"
+                [disabled]="!isIAgreeChecked" (click)="closeDialogModal()">Proceed</button>
+              <button style="    border: 1px solid red;
+                margin-right: 15px;background-color: transparent; text-transform: uppercase;
+                  color: red !important;width: auto !important; height: 50 px; float: right;" mat-flat-button
+                class="big-buttonStyles" [ngClass]="{'primary': class=='primary'}" (click)="goHome()">Disagree</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</ng-template>
+
+<ng-template #iFrameModalTemplate>
+  <iframe style="height: 100%; border: none;" id="quickServiceIFrame" src="" class="col-md-12"></iframe>
+</ng-template>
